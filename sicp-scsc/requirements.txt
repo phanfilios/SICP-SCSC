@@ -1,0 +1,24 @@
+numpy
+scipy
+matplotlib
+cryptography
+aiohttp
+psutil
+scapy
+qiskit
+
+Notas técnicas (importante)
+asyncio ❌ NO se incluye → ya viene con Python
+logging, datetime ❌ estándar de Python
+qiskit ✔ solo si vas a simular lógica cuántica (puedes quitarlo si aún no lo usas)
+matplotlib / scipy / numpy ✔ útiles para simulaciones y análisis
+
+Instalación correcta
+
+Ejecuta en tu terminal (Ubuntu o VSCode):
+
+pip install -r requirements.txt
+
+Si tienes problemas con pip (como antes):
+
+python -m pip install -r requirements.txt
