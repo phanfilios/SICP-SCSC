@@ -1,45 +1,34 @@
-# SCSC — Sistema de Ciberseguridad Cuántica Experimental
+# SCSC - Sistema de Ciberseguridad Cuántica
 
-Prototype of a distributed cybersecurity platform that simulates quantum-inspired defense over classical infrastructure.
+Sistema experimental de ciberseguridad basado en principios cuánticos, diseñado para operar en un cluster distribuido de 6 computadoras (1 master + 5 workers).
 
-## Implemented architecture
+## 🚀 Instalación Rápida
 
-- **Master Node**: async orchestrator, task scheduler, heartbeat tracking, task aggregation.
-- **Worker Nodes**: execute task types (`quantum_simulation`, `crypto_operation`, `attack_response`, `key_distribution`, `status`).
-- **Fault tolerance**: heartbeat timeout detection and automatic node availability management.
-- **Traffic simulation**: synthetic latency/throughput/packet-loss metrics (normal vs attack mode).
-- **Quantum simulation**: BB84-inspired key sifting + Bell-state statevector demo (Qiskit when available).
-
-## Repository layout
-
-- `sicp-scsc/master/orchestrator.py`
-- `sicp-scsc/master/scheduler.py`
-- `sicp-scsc/worker/worker_node.py`
-- `sicp-scsc/worker/crypto_engine.py`
-- `sicp-scsc/worker/attack_simulator.py`
-- `sicp-scsc/recovery/fault_tolerance.py`
-- `sicp-scsc/network/traffic_simulation.py`
-- `sicp-scsc/quantum/quantum_simulator.py`
-
-## Run locally (single machine simulation)
+### En el Master (nodo central)
 
 ```bash
-cd sicp-scsc
-python -m venv .venv
-source .venv/bin/activate
+# 1. Clonar o copiar el proyecto
+cd scsc-quantum-security
+
+# 2. Crear entorno virtual
+python3 -m venv venv
+source venv/bin/activate
+
+# 3. Instalar dependencias
 pip install -r requirements.txt
 
-# Terminal 1: master
-python -m master.orchestrator
+# 4. Configurar .env con las IPs de tus nodos
+nano .env
 
-# Terminal 2..N: workers
-python -m worker.worker_node --node-id worker-1 --port 9101
-python -m worker.worker_node --node-id worker-2 --port 9102
-python -m worker.worker_node --node-id worker-3 --port 9103
-```
+# 5. Ejecutar master
+python master/app.py
 
-## Notes
+#Other comands
 
-- Designed for Ubuntu deployment in a LAN cluster.
-- No quantum hardware required; all quantum behavior is simulated.
-- Modules are intentionally decoupled for future extensibility.
+# Prueba rápida del cluster
+python -c "from common.config import config; print(config.to_dict())"
+
+# Probar comunicación
+python tests/test_cluster.py
+
+Acceder a http://master_ip:8000/metrics para métricas Prometheus
