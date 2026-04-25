@@ -2,7 +2,7 @@
 
 Sistema experimental de ciberseguridad basado en principios cuánticos, diseñado para operar en un cluster distribuido de 6 computadoras (1 master + 5 workers).
 
-## 🚀 Instalación Rápida
+##  Instalación Rápida
 
 ### En el Master (nodo central)
 
