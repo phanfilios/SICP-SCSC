@@ -2,6 +2,8 @@
 
 Sistema experimental de ciberseguridad basado en principios cuánticos, diseñado para operar en un cluster distribuido de 6 computadoras (1 master + 5 workers).
 
+<img width="1739" height="891" alt="image" src="https://github.com/user-attachments/assets/0a737b75-d701-4062-9b9e-b488e1c7d315" />
+
 ##  Instalación Rápida
 
 ### En el Master (nodo central)
@@ -33,5 +35,4 @@ python tests/test_cluster.py
 
 Acceder a http://master_ip:8000/metrics para métricas Prometheus
 
-<img width="1739" height="891" alt="image" src="https://github.com/user-attachments/assets/8b41f980-0077-48d9-806a-eab54486d92c" />
 
