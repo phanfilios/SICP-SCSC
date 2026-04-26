@@ -32,3 +32,6 @@ python -c "from common.config import config; print(config.to_dict())"
 python tests/test_cluster.py
 
 Acceder a http://master_ip:8000/metrics para métricas Prometheus
+
+<img width="1739" height="891" alt="image" src="https://github.com/user-attachments/assets/8b41f980-0077-48d9-806a-eab54486d92c" />
+
